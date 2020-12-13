@@ -14,7 +14,7 @@ namespace Library
             var db = new QueryFactory(connection, new MySqlCompiler());
 
             // or more simpler
-            IEnumerable<dynamic> users = db.Query("Users").Get();
+            IEnumerable<dynamic> users = db.Query("users").Get();
 
             foreach(var user in users)
             {
@@ -26,7 +26,7 @@ namespace Library
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 
-            dynamic result = db.Query("Users")
+            dynamic result = db.Query("users")
                 .Where("email", "=", email)
                 .Where("pincode", "=", pincode)
                 .Where("role", "=", 1)

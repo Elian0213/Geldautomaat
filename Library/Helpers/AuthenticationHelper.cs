@@ -12,7 +12,7 @@ namespace Library.Helpers
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 
-            dynamic result = db.Query("Users")
+            dynamic result = db.Query("users")
                 .Where("email", "=", email)
                 .Where("pincode", "=", pincode)
                 .Where("role", "=", 1)
@@ -36,7 +36,7 @@ namespace Library.Helpers
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 
-            dynamic result = db.Query("Users")
+            dynamic result = db.Query("users")
                 .Where("account_number", "=", accountNumber)
                 .Where("pincode", "=", pincode)
                 .Where("role", "=", 0)
@@ -60,7 +60,7 @@ namespace Library.Helpers
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 
-            dynamic result = db.Query("Users")
+            dynamic result = db.Query("users")
                 .Where("email", "=", email)
                 .Where("pincode", "=", pincode)
                 .Where("role", "=", 1)

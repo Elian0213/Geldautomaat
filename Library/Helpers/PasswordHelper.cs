@@ -26,12 +26,23 @@ namespace Library.Helpers
             }
         }
 
+        public class generatedCode
+        {
+            public string Code { get; set; }
+            public string Hash { get; set; }
+        }
+
         /**
          * Returns a randomly generated 4-digit string
         **/
-        public string randomPincode()
+        public dynamic randomPincode()
         {
-            return ComputeSha256Hash(new Random().Next(1000, 9999).ToString());
+            string code = new Random().Next(1000, 9999).ToString();
+
+            return new generatedCode{
+                Code = code,
+                Hash = ComputeSha256Hash(code),
+            };
         }
     }
 }

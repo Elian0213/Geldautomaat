@@ -14,10 +14,10 @@ namespace Library
 
         private void initClass()
         {
-            _server = "localhost";
-            _database = "rheimeratm";
-            _uid = "root";
-            _password = "root";
+            _server = "192.168.0.162";
+            _database = "geldautomaat";
+            _uid = "elian";
+            _password = "elian";
 
             setupConnection();
         }

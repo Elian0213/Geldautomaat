@@ -119,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\User\UpdateUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\User\CreateUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +137,9 @@
     </Compile>
     <Compile Include="Forms\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UpdateUser.xaml.cs">
+      <DependentUpon>UpdateUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\CreateUser.xaml.cs">
       <DependentUpon>CreateUser.xaml</DependentUpon>

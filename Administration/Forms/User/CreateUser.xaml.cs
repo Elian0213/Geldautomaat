@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Library.Models;
 using Library.Controllers;
 using Library.Helpers;
@@ -40,11 +30,20 @@ namespace Administration.Forms.User
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            this.storeUser();
+            try
+            {
+                this.storeUser();
+            } catch
+            {
+                MessageBox.Show("Niet alle velden zijn ingevuld!");
+            }
         }
 
         public void storeUser()
         {
+            dynamic pincodeObject = new PasswordHelper().randomPincode();
+            int accountNumber = new Random().Next(10000000, 99999999);
+
             UserModel userData = new UserModel()
             {
                 Email = EmailInput.Text,
@@ -56,15 +55,15 @@ namespace Administration.Forms.User
                 Address = AddressInput.Text,
                 Zipcode = ZipcodeInput.Text,
                 Town = PlaceInput.Text,
-                Pincode = new PasswordHelper().randomPincode(),
-                Account_number = new Random().Next(10000000, 99999999),
+                Pincode = pincodeObject.Hash,
+                Account_number = accountNumber,
                 Balance = 0,
                 Blocked = 0,
             };
 
             adminController.storeUser(userData);
 
-            MessageBox.Show("Saved");
+            MessageBox.Show("De inlog informatie - \nRekening nummer: " + accountNumber + "\nPincode: " + pincodeObject.Code, "Gebruiker toegevoegd!");
         }
     }
 }
