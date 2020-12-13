@@ -5,7 +5,7 @@ This is a school assignment.
 take the ``database-template.sql`` and import it into a schema, the name doesn't matter as you will configure this in the next step!
 
 ### Database connection
-In ``Library\Database.cs`` you must change the following variables to your according configuration.
+In [``Library\Database.cs``](https://github.com/Elian0213/Geldautomaat/blob/main/Library/Database.cs) you must change the following variables to your according configuration.
 
 ```csharp
 private void initClass()
