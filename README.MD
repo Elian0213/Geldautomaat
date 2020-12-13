@@ -8,12 +8,12 @@ take the ``database-template.sql`` and import it into a schema, the name doesn't
 In ``Library\Database.cs`` you must change the following variables to your according configuration.
 
 ```csharp
-            private void initClass()
-        {
-            _server = "DATABASE IP";
-            _database = "SCHEME NAME";
-            _uid = "USERNAME";
-            _password = "PASSWORD";
+private void initClass()
+{
+    _server = "DATABASE IP";
+    _database = "SCHEME NAME";
+    _uid = "USERNAME";
+    _password = "PASSWORD";
 ```
 
 ## Requirements
