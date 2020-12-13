@@ -1,0 +1,84 @@
+﻿<Window x:Class="Administration.Forms.Overview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Administration.Forms"
+        mc:Ignorable="d"
+        Title="Overview" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid VerticalAlignment="Top" Height="50" Margin="25 0 25 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontSize="20" VerticalAlignment="Center">Rabobank</TextBlock>
+
+                <StackPanel Grid.Column="1" Width="180" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBox x:Name="SearchbarInput" Grid.Row="1" Height="20" Width="125" KeyDown="SearchbarInput_KeyDown"></TextBox>
+                    <Button x:Name="SearchbarButton" Height="20" Margin="5 0 0 0" Width="50" Content="Zoek" Click="SearchbarButton_Click"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Height="25" VerticalAlignment="Top" Margin="0 50 0 0" Background="#e3e3e3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="85" />
+                    <ColumnDefinition Width="101" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Margin="25 0 0 0" VerticalAlignment="Center">ID</TextBlock>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center">Volledige naam</TextBlock>
+                <TextBlock Grid.Column="2" VerticalAlignment="Center">E-Mail adres</TextBlock>
+                <TextBlock Grid.Column="3" VerticalAlignment="Center" Margin="0 0 10 0">Bewerken</TextBlock>
+                <TextBlock Grid.Column="4" VerticalAlignment="Center" Margin="0 0 26 0">Blokkeren</TextBlock>
+            </Grid>
+
+            <ItemsControl ItemsSource="{Binding Path=.}" Margin="0 75 0 0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="25" Margin="25 12 25 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="85" />
+                                <ColumnDefinition Width="76" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{Binding Id}" />
+                            <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding FullName}" />
+                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Email}" />
+                            <Button Grid.Column="3"  Margin="0 0 10 0" Uid="{Binding Id}">Bewerken</Button>
+                            <Button x:Name="BlockUserButton" Grid.Column="4" Margin="0 0 1 0" Uid="{Binding Id}" Click="BlockUserButton_Click" Content="{Binding BlockButtonText}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#FFD0D0D0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <TextBlock x:Name="userDisplayText" Margin="0 15 0 20" HorizontalAlignment="Center">Voornaam Achternaam</TextBlock>
+
+                <Button x:Name="openAddUserPageButton" Width="150" Click="openAddUserPageButton_Click">Gebruiker toevogen</Button>
+            </StackPanel>
+
+            <Button Grid.Row="1" Height="20" Width="150">Uitloggen</Button>
+        </Grid>
+    </Grid>
+</Window>
