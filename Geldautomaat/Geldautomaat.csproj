@@ -149,6 +149,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\Panels\Withdraw\ConfirmationWithdraw.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Panels\Withdraw\WithdrawCustomAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -168,6 +176,12 @@
     </Compile>
     <Compile Include="Forms\Panels\TransactionHistory.xaml.cs">
       <DependentUpon>TransactionHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Withdraw\ConfirmationWithdraw.xaml.cs">
+      <DependentUpon>ConfirmationWithdraw.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Withdraw\WithdrawCustomAmount.xaml.cs">
+      <DependentUpon>WithdrawCustomAmount.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -222,5 +236,6 @@
   <ItemGroup>
     <Resource Include="logo-rabobank.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
