@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Administration.Forms"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Overview" Height="450" Width="800">
+        Title="Overzicht" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,12 +23,12 @@
                 <TextBlock FontSize="20" VerticalAlignment="Center">Rabobank</TextBlock>
 
                 <StackPanel Grid.Column="1" Width="180" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
-                    <TextBox x:Name="SearchbarInput" Grid.Row="1" Height="20" Width="125" KeyDown="SearchbarInput_KeyDown"></TextBox>
-                    <Button x:Name="SearchbarButton" Height="20" Margin="5 0 0 0" Width="50" Content="Zoek" Click="SearchbarButton_Click"/>
+                    <TextBox x:Name="SearchbarInput" Grid.Row="1" VerticalContentAlignment="Center" Height="24" Width="125" KeyDown="SearchbarInput_KeyDown"></TextBox>
+                    <Button x:Name="SearchbarButton" Margin="5 0 0 0" Width="50" Content="Zoek" Click="SearchbarButton_Click" BorderBrush="#FF000099" BorderThickness="2" FontWeight="Bold" Foreground="#FF000099" Background="White" Height="24"/>
                 </StackPanel>
             </Grid>
 
-            <Grid Height="25" VerticalAlignment="Top" Margin="0 50 0 0" Background="#e3e3e3">
+            <Grid Height="25" VerticalAlignment="Top" Margin="0 50 0 0" Background="#23FD6400">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition />
@@ -60,8 +60,8 @@
                                 <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{Binding Id}" />
                                 <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding FullName}" />
                                 <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Email}" />
-                                <Button x:Name="EditUserButton" Grid.Column="3"  Margin="0 0 10 0" Uid="{Binding Id}" Click="EditUserButton_Click">Bewerken</Button>
-                                <Button x:Name="BlockUserButton" Grid.Column="4" Margin="0 0 1 0" Uid="{Binding Id}" Click="BlockUserButton_Click" Content="{Binding BlockButtonText}" />
+                                <Button x:Name="EditUserButton" Grid.Column="3"  Margin="0 0 10 0" Uid="{Binding Id}" Click="EditUserButton_Click" BorderBrush="{x:Null}" Foreground="White" Background="#fd6400" Height="24">Bewerken</Button>
+                                <Button x:Name="BlockUserButton" Grid.Column="4" Margin="0 0 1 0" Uid="{Binding Id}" Click="BlockUserButton_Click" Content="{Binding BlockButtonText}" BorderBrush="{x:Null}" Foreground="White" Background="#914819" Height="24" />
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -69,7 +69,7 @@
             </ScrollViewer>
         </Grid>
 
-        <Grid Grid.Column="1" Background="#FFD0D0D0">
+        <Grid Grid.Column="1" Background="#23FD6400">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition Height="40" />
@@ -78,10 +78,10 @@
             <StackPanel Grid.Row="0">
                 <TextBlock x:Name="userDisplayText" Margin="0 15 0 20" HorizontalAlignment="Center">Voornaam Achternaam</TextBlock>
 
-                <Button x:Name="openAddUserPageButton" Width="150" Click="openAddUserPageButton_Click">Gebruiker toevoegen</Button>
+                <Button x:Name="openAddUserPageButton" Width="150" Click="openAddUserPageButton_Click" BorderBrush="{x:Null}" Foreground="White" Background="#FF000099" Height="24">Gebruiker toevoegen</Button>
             </StackPanel>
 
-            <Button x:Name="LogoutButton" Grid.Row="1" Height="20" Width="150" Click="LogoutButton_Click">Uitloggen</Button>
+            <Button x:Name="LogoutButton" Grid.Row="1" Width="150" Click="LogoutButton_Click"  BorderBrush="{x:Null}" Foreground="White" Background="#FF990000" Height="24">Uitloggen</Button>
         </Grid>
     </Grid>
 </Window>

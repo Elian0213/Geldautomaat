@@ -28,7 +28,7 @@
             <Label>Pincode</Label>
             <TextBox x:Name="pincodeInput"></TextBox>
 
-            <Button x:Name="loginButton" Margin="0 20 0 0" Click="loginButton_Click" Width="100">Inloggen</Button>
+            <Button x:Name="loginButton" Margin="0 20 0 0" Click="loginButton_Click" Width="100"  BorderBrush="{x:Null}" Foreground="White" Background="#FF000099" Height="24">Inloggen</Button>
         </StackPanel>
     </Grid>
 </Window>

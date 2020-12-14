@@ -30,7 +30,7 @@ namespace Administration
                 this.Close();
             } else
             {
-                MessageBox.Show("Invalid email and or pincode!");
+                MessageBox.Show("Ongeldig E-Mail adres of pincode!", "Inlog fout");
             }
         }
     }

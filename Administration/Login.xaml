@@ -17,7 +17,7 @@
 
         <TextBlock FontSize="20"  Margin="25 12.5 25 0" VerticalAlignment="Top">Rabobank</TextBlock>
 
-        <Grid Height="25" VerticalAlignment="Top" Margin="0 50 0 0" Background="#e3e3e3">
+        <Grid Height="25" VerticalAlignment="Top" Margin="0 50 0 0" Background="#23FD6400">
             <TextBlock Grid.Column="0" Margin="25 0 0 0" VerticalAlignment="Center">Inloggen op het administratiepanel</TextBlock>
         </Grid>
 
@@ -28,7 +28,7 @@
             <Label>Pincode</Label>
             <TextBox x:Name="pincodeInput"></TextBox>
 
-            <Button x:Name="loginButton" Margin="0 20 0 0" Click="loginButton_Click" Width="100">Inloggen</Button>
+            <Button x:Name="loginButton" Margin="0 20 0 0" Click="loginButton_Click" Width="100" BorderBrush="{x:Null}" Foreground="White" Background="#FF000099" Height="24">Inloggen</Button>
         </StackPanel>
     </Grid>
 </Window>
