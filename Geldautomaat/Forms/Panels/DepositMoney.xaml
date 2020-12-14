@@ -56,9 +56,9 @@
 
                 <StackPanel Width="125" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label FontSize="14">Bedrag te storten</Label>
-                    <TextBox Height="23" Margin="0,0,0.333,0"></TextBox>
+                    <TextBox x:Name="depositAmountInput" Height="23" Margin="0,0,0.333,0"></TextBox>
 
-                    <Button Margin="0 15 0 0" BorderBrush="{x:Null}" Foreground="White" Background="#fd6400" FontSize="14" Height="28">Storten</Button>
+                    <Button x:Name="depostMoneyButton" Margin="0 15 0 0" BorderBrush="{x:Null}" Foreground="White" Background="#fd6400" FontSize="14" Height="28" Click="depostMoneyButton_Click">Storten</Button>
                 </StackPanel>
             </Grid>
         </Grid>

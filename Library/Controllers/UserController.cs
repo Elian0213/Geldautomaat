@@ -22,5 +22,21 @@ namespace Library.Controllers
 
             return transactions;
         }
+
+        public void depostMoney(TransactionModel transaction)
+        {
+            var db = new QueryFactory(connection, new MySqlCompiler());
+
+            db.Query("transactions").Insert(transaction);
+        }
+
+        public void updateBalance(UserModel user)
+        {
+            var db = new QueryFactory(connection, new MySqlCompiler());
+
+            db.Query("users")
+                .Where("id", user.Id)
+                .Update(user);
+        }
     }
 }
