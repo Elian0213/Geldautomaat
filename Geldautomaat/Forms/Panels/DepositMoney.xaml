@@ -26,7 +26,7 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" Background="#FFE4E4E4" Grid.ColumnSpan="2" Margin="0,0,0.333,0.333" />
+        <StackPanel Grid.Row="1" Background="#23FD6400" Grid.ColumnSpan="2" Margin="0,0,0.333,0.333" />
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,5,0.333,-0.333" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
@@ -49,7 +49,7 @@
                 </StackPanel>
             </Grid>
 
-            <StackPanel Grid.Column="1" Background="#FFE4E4E4" />
+            <StackPanel Grid.Column="1" Background="#23FD6400" />
 
             <Grid Grid.Column="2" Margin="25">
                 <Button x:Name="backButton" Height="32" Width="106" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Background="#FFEF3939" Foreground="White" FontSize="18" Click="backButton_Click">Terug</Button>
@@ -58,7 +58,7 @@
                     <Label FontSize="14">Bedrag te storten</Label>
                     <TextBox Height="23" Margin="0,0,0.333,0"></TextBox>
 
-                    <Button Margin="0 15 0 0" BorderBrush="{x:Null}" Foreground="White" Background="#FF4BB73E" FontSize="14" Height="28">Storten</Button>
+                    <Button Margin="0 15 0 0" BorderBrush="{x:Null}" Foreground="White" Background="#fd6400" FontSize="14" Height="28">Storten</Button>
                 </StackPanel>
             </Grid>
         </Grid>

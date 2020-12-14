@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Geldautomaat.Forms"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Dashboard" Height="450" Width="800">
+        Title="Overzicht" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -15,14 +15,18 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="20 0">
-            <TextBlock VerticalAlignment="Center" FontSize="20">Rabobank</TextBlock>
-            <StackPanel VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="417*"/>
+                <ColumnDefinition Width="337*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" FontSize="20" Grid.ColumnSpan="2" Margin="0,12,-0.333,11">Rabobank</TextBlock>
+            <StackPanel VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,4,-0.333,4">
                 <TextBlock x:Name="dateText" VerticalAlignment="Center" HorizontalAlignment="Right">12/02/12</TextBlock>
                 <TextBlock x:Name="clockText" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">04:24</TextBlock>
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" Background="#FFE4E4E4" />
+        <StackPanel Grid.Row="1" Background="#23FD6400" />
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -45,7 +49,7 @@
                 </StackPanel>
             </Grid>
 
-            <StackPanel Grid.Column="1" Background="#FFE4E4E4" />
+            <StackPanel Grid.Column="1" Background="#23FD6400" />
 
             <Grid Grid.Column="2" Margin="25">
                 <Grid.RowDefinitions>
@@ -59,8 +63,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="depositButton" Grid.Column="0" Margin="25" BorderBrush="{x:Null}" Background="#FF45C870" Foreground="White" FontSize="18" Click="depositButton_Click">Geld storten</Button>
-                    <Button x:Name="withdrawButton" Grid.Column="1" Margin="25" BorderBrush="{x:Null}" Background="#FF7049E0" Foreground="White" FontSize="18" Click="withdrawButton_Click">Geld opnmenen</Button>
+                    <Button x:Name="depositButton" Grid.Column="0" Margin="25" BorderBrush="{x:Null}" Background="#fd6400" Foreground="White" FontSize="18" Click="depositButton_Click">Geld storten</Button>
+                    <Button x:Name="withdrawButton" Grid.Column="1" Margin="25" BorderBrush="{x:Null}" Background="#FFF5A774" Foreground="White" FontSize="18" Click="withdrawButton_Click">Geld opnmenen</Button>
                 </Grid>
 
                 <Grid Grid.Row="1">
@@ -69,8 +73,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="transactionHistoryButton" Grid.Column="0" Margin="25" BorderBrush="{x:Null}" Background="#FF4580C8" Foreground="White" FontSize="18" Click="transactionHistoryButton_Click">Transactie Geschiedenis</Button>
-                    <Button x:Name="LogoutButton" Grid.Column="1" Margin="25" BorderBrush="{x:Null}" Background="#FFE04960" Foreground="White" FontSize="18" Click="LogoutButton_Click">Kaart terugnemen</Button>
+                    <Button x:Name="transactionHistoryButton" Grid.Column="0" Margin="25" BorderBrush="{x:Null}" Background="#009" Foreground="White" FontSize="18" Click="transactionHistoryButton_Click">Transactie Geschiedenis</Button>
+                    <Button x:Name="LogoutButton" Grid.Column="1" Margin="25" BorderBrush="{x:Null}" Background="#FFE0223F" Foreground="White" FontSize="18" Click="LogoutButton_Click">Kaart terugnemen</Button>
                 </Grid>
             </Grid>
         </Grid>

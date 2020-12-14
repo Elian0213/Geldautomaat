@@ -8,9 +8,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using Library.Models;
 
@@ -40,7 +37,9 @@ namespace Geldautomaat.Forms.Panels
             DispatcherTimer timer = new DispatcherTimer();
 
             string date = DateTime.UtcNow.ToShortDateString();
+
             dateText.Text = date;
+            clockText.Text = DateTime.Now.ToLongTimeString();
 
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;

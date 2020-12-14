@@ -10,7 +10,7 @@ namespace Library.Controllers
 {
     public class UserController : Database
     {
-        public IEnumerable<TransactionModel> getLastTransactions(uint userID)
+        public IEnumerable<TransactionModel> getLastTransactions(string userID)
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 

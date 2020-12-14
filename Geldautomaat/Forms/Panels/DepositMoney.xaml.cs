@@ -40,7 +40,9 @@ namespace Geldautomaat.Forms.Panels
             DispatcherTimer timer = new DispatcherTimer();
 
             string date = DateTime.UtcNow.ToShortDateString();
+
             dateText.Text = date;
+            clockText.Text = DateTime.Now.ToLongTimeString();
 
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
