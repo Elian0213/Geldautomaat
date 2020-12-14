@@ -31,9 +31,9 @@ namespace Administration.Forms
 
             InitializeComponent();
 
-            userDisplayText.Text = this.user["first_name"] + " " + this.user["last_name"];
-
             this.fillUserData();
+
+            userDisplayText.Text = this.user["first_name"] + " " + this.user["last_name"];
         }
 
         public void fillUserData()

@@ -3,6 +3,7 @@ using SqlKata.Execution;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Library.Models;
 
 namespace Library.Helpers
 {
@@ -67,6 +68,13 @@ namespace Library.Helpers
                 .First();
 
             return ((IDictionary<string, object>)result);
+        }
+
+        public UserModel getUser(string accountNumber)
+        {
+            var db = new QueryFactory(connection, new MySqlCompiler());
+
+            return db.Query("users").Where("account_number", accountNumber).First<UserModel>();
         }
     }
 }
