@@ -23,7 +23,7 @@ namespace Library.Controllers
             return transactions;
         }
 
-        public void depostMoney(TransactionModel transaction)
+        public void depostMoney(TransactionModelStore transaction)
         {
             var db = new QueryFactory(connection, new MySqlCompiler());
 
@@ -37,6 +37,22 @@ namespace Library.Controllers
             db.Query("users")
                 .Where("id", user.Id)
                 .Update(user);
+        }
+
+        public int transactionsToday(uint userID)
+        {
+            var db = new QueryFactory(connection, new MySqlCompiler());
+
+            dynamic result = db.Query("transactions")
+                .Where("users_id", "=", userID)
+                .Where("type", "=", "withdraw")
+                .Where("created_at", "=", DateTime.Now.ToString("yyyy-M-dd"))
+                .AsCount()
+                .First();
+
+            long count = (long)((IDictionary<string, object>)result)["count"];
+
+            return Int32.Parse(count.ToString());
         }
     }
 }

@@ -67,15 +67,15 @@ namespace Geldautomaat.Forms.Panels
             // Check if input is a valid decimal
             if (!decimal.TryParse(depositAmountInput.Text, out _) || decimal.Parse(depositAmountInput.Text) < 0)
             {
-                MessageBox.Show("Ingevulde bedrag is ongeldig!");
+                MessageBox.Show("Ingevulde bedrag is ongeldig!", "Validatie fout");
                 return;
             }
 
-            userController.depostMoney(new TransactionModel
+            userController.depostMoney(new TransactionModelStore
             {
                 Type = "deposit",
                 Amount = Decimal.Parse(depositAmountInput.Text),
-                Created_at = new DateTime(),
+                Created_at = DateTime.Now.ToString("yyyy-M-dd"),
                 Users_id = this.user.Id,
             });
 

@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Threading;
 using Library.Models;
+using Library.Controllers;
 
 namespace Geldautomaat.Forms.Panels
 {
@@ -19,6 +20,8 @@ namespace Geldautomaat.Forms.Panels
     public partial class WithdrawMoney : Window
     {
         UserModel user = new UserModel();
+
+        UserController userController = new UserController();
 
         public WithdrawMoney(UserModel currentUser)
         {
@@ -54,6 +57,30 @@ namespace Geldautomaat.Forms.Panels
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             new Forms.Dashboard(this.user).Show();
+            this.Close();
+        }
+
+        private void moreOptionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            new Withdraw.WithdrawCustomAmount(this.user).Show();
+            this.Close();
+        }
+
+        private void withdrawAction_Click(object sender, RoutedEventArgs e)
+        {
+            string amount = (e.Source as Button).Uid;
+
+            if (userController.transactionsToday(this.user.Id) >= 3)
+            {
+                MessageBox.Show("Het limiet van 3 opnamens per dag is bereikt", "Validatie fout");
+                return;
+            } else if (decimal.Parse(amount) > this.user.Balance)
+            {
+                MessageBox.Show("Je hebt niet genoeg saldo.", "Validatie fout");
+                return;
+            }
+
+            new Withdraw.ConfirmationWithdraw(this.user, Int32.Parse(amount)).Show();
             this.Close();
         }
     }

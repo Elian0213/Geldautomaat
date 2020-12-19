@@ -51,7 +51,7 @@
             <StackPanel Grid.Column="1" Background="#23FD6400" />
 
             <Grid Grid.Column="2" Margin="25">
-                <Button x:Name="backButton" Height="32" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Background="#FFEF3939" Foreground="White" FontSize="18" Click="backButton_Click">Terug naar overzicht</Button>
+                <Button x:Name="backButton" Height="32" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Background="#FFEF3939" Foreground="White" FontSize="18" Click="backButton_Click">Terug</Button>
 
                 <StackPanel Width="125" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label FontSize="14">Bedrag opnemen</Label>

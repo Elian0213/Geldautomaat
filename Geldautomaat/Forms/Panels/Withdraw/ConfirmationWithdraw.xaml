@@ -54,9 +54,9 @@
                 <Button x:Name="backButton" Height="32" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Background="#fd6400" Foreground="White" FontSize="18" Click="backButton_Click">Terug naar overzicht</Button>
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label FontSize="14">Weet je zeker dat je € 25.00 wilt opnemen?</Label>
+                    <Label x:Name="confirmMessage" FontSize="14">Weet je zeker dat je € 25.00 wilt opnemen?</Label>
 
-                    <Button  Margin="0 15 0 0" BorderBrush="{x:Null}" Width="100" Foreground="White" Background="#FF31A42C" FontSize="14" Height="28" Click="withdrawMoneyButton_Click">Opnemen</Button>
+                    <Button x:Name="withdrawContinueButton"  Margin="0 15 0 0" BorderBrush="{x:Null}" Width="100" Foreground="White" Background="#FF31A42C" FontSize="14" Height="28" Click="withdrawContinueButton_Click">Opnemen</Button>
                 </StackPanel>
             </Grid>
         </Grid>
