@@ -16,6 +16,21 @@ private void initClass()
     _password = "PASSWORD";
 ```
 
+### Default accounts
+
+**admin account**
+```bash
+$ E-Mail: elian@email.nl
+$ Pincode: 1234
+```
+
+
+**Gebruikers account**
+```bash
+$ Rekening nummer: 17073693
+$ Pincode: 1707
+```
+
 ## Requirements
 You need the follolwing library(s)
 
