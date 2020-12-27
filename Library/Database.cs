@@ -32,7 +32,7 @@ namespace Library
 
         private void setupConnection()
         {
-            string connectionString = "Server=" + _server + ";Database=" + _database + ";User Id=" + _uid + ";Password=" + _password;
+            string connectionString = $"Server={_server}; Database={_database};User Id={_uid};Password={_password}";
             _connection = new MySqlConnection(connectionString);
         }
 
@@ -41,20 +41,6 @@ namespace Library
             try
             {
                 connection.Open();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-        }
-
-        public bool CloseConnection()
-        {
-            try
-            {
-                connection.Close();
                 return true;
             }
             catch (MySqlException ex)

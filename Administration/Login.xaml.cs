@@ -21,13 +21,18 @@ namespace Administration
 
             if (authenticationHelper.adminAuthentication(emailInput.Text, pincode))
             {
-                // Get user information to pass on.
-                var user = authenticationHelper.getUserAdmin(emailInput.Text, pincode);
-                Console.WriteLine(user["id"]);
+                if (!authenticationHelper.userIsBlocked(emailInput.Text))
+                {
+                    // Get user information to pass on.
+                    var user = authenticationHelper.getUserAdmin(emailInput.Text, pincode);
 
-                // Login successful! Open overview panel!
-                new Forms.Overview(user).Show();
-                this.Close();
+                    // Login successful! Open overview panel!
+                    new Forms.Overview(user).Show();
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Account is geblokkeerd", "Error");
+                }
             } else
             {
                 MessageBox.Show("Ongeldig E-Mail adres of pincode!", "Inlog fout");

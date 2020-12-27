@@ -32,9 +32,6 @@ namespace Library.Helpers
             public string Hash { get; set; }
         }
 
-        /**
-         * Returns a randomly generated 4-digit string
-        **/
         public dynamic randomPincode()
         {
             string code = new Random().Next(1000, 9999).ToString();

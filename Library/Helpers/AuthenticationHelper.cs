@@ -57,6 +57,29 @@ namespace Library.Helpers
             }
         }
 
+        public bool userIsBlocked(string accountNumberOrEmail)
+        {
+            var db = new QueryFactory(connection, new MySqlCompiler());
+
+            dynamic result = db.Query("users")
+                .Where("account_number", "=", accountNumberOrEmail)
+                .OrWhere("email", "=", accountNumberOrEmail)
+                .Where("blocked", "=", 1)
+                .AsCount()
+                .First();
+
+            dynamic count = ((IDictionary<string, object>)result)["count"];
+
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IDictionary<string, object> getUserAdmin(string email, string pincode)
         {
             var db = new QueryFactory(connection, new MySqlCompiler());

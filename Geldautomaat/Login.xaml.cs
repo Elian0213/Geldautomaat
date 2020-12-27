@@ -33,8 +33,14 @@ namespace Geldautomaat
             string pincode = new PasswordHelper().ComputeSha256Hash(pincodeInput.Text);
             if (authHelper.userAuthentication(AccountnumberInput.Text, pincode))
             {
-                new Forms.Dashboard(authHelper.getUser(AccountnumberInput.Text)).Show();
-                this.Close();
+                if (!authHelper.userIsBlocked(AccountnumberInput.Text))
+                {
+                    new Forms.Dashboard(authHelper.getUser(AccountnumberInput.Text)).Show();
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Account is geblokkeerd!", "Error");
+                }
             } else
             {
                 MessageBox.Show("Rekening nummer of pincode is incorrect!");
